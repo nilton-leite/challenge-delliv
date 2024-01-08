@@ -10,7 +10,7 @@ services:
         POSTGRES_DB: delliv-db
       ports:
         - 5432:5432
-  challenge-delliv-backend:
+  backend:
     build:
       dockerfile: Dockerfile
       context: ./challenge-delliv-backend
@@ -21,13 +21,13 @@ services:
     depends_on:
       - db
 
-  challenge-delliv-front:
+  frontend:
     build:
       dockerfile: Dockerfile
       context: ./challenge-delliv-front
     volumes:
       - /app/node_modules
-      - ./challenge-delliv-front/web:/app
+      - ./frontend/web:/app
 
   nginx:
     restart: always
@@ -37,8 +37,8 @@ services:
     ports:
       - 80:80
     depends_on:
-      - challenge-delliv-backend
-      - challenge-delliv-front
+      - backend
+      - frontend
     networks:
       - app_network
 

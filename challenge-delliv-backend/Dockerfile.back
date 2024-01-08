@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-ENV NODE_ENV=development
+ENV NODE_ENV=production
 
 RUN yarn global add typescript
 
@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 3003 
 
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "start:prod" ]

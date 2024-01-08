@@ -28,14 +28,14 @@ services:
     volumes:
       - /app/node_modules
       - ./challenge-delliv-front/web:/app
-      
+
   nginx:
     restart: always
     build:
       dockerfile: Dockerfile
       context: ./nginx
     ports:
-      - 8080:80
+      - 80:80
     depends_on:
       - challenge-delliv-backend
       - challenge-delliv-front

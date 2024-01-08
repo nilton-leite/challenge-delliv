@@ -15,8 +15,8 @@ services:
       dockerfile: Dockerfile
       context: ./
     volumes:
-      - /root/challenge-delliv/:app_back
-      - /root/challenge-delliv/app_back/node_modules
+      - ./backend:/app
+      - ./backend/app/node_modules
   # app:
   #   build:
   #       context: ./

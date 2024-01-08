@@ -1,5 +1,4 @@
 import { getAccessToken } from './localStorage';
-import { env_var } from '../config/env';
 import axios from 'axios'
 
 export interface AuthPayload {

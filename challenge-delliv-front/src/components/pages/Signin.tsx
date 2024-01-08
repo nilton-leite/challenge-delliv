@@ -4,8 +4,8 @@ import ContainerSignin from '../templates/container-signin';
 import { ButtonSubmit } from '../atoms/Buttons';
 import  TextFields  from '../atoms/TextFields';
 import { useAppDispatch } from '../../redux/hooks';
-import { authenticateUser, IAuthentication } from '../../redux/SigninSlice';
-import { useForm, FormProvider, useFormContext, FieldValues } from "react-hook-form";
+import { authenticateUser } from '../../redux/SigninSlice';
+import { useForm, FormProvider, FieldValues } from "react-hook-form";
 import React from 'react';
 import { Alert } from '@mui/material';
 
@@ -14,8 +14,6 @@ const defaultTheme = createTheme();
 export default function SignIn() {
 
   const dispatch = useAppDispatch();
-
-  const [items,setItems] = React.useState<any>()
   const [showAlert,setShowAlert] = React.useState<boolean>(false)
 
   const methods = useForm({mode: 'all'});

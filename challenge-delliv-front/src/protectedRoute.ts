@@ -1,6 +1,3 @@
-// import {useNavigate} from "react-router-dom"
-import { store } from './redux/store'
-// import React, { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import { getAccessToken, removeTokens } from './services/localStorage';
 import { useEffect } from 'react';

@@ -10,10 +10,10 @@ services:
         POSTGRES_DB: delliv-db
       ports:
         - 5432:5432
-        
+
   backend:
     build:
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.back
       context: ./challenge-delliv-backend
     networks:
       - app_network

@@ -23,9 +23,9 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./challenge-delliv-front
-    volumes:
-      - /app/node_modules
-      - ./frontend/web:/app
+    # volumes:
+    #   - /app/node_modules
+    #   - ./frontend/web:/app
 
   nginx:
     restart: always

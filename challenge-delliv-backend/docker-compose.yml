@@ -14,9 +14,9 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./
-    # volumes:
-    #   - /app/node_modules
-    #   - ./backend:/app
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
   # app:
   #   build:
   #       context: ./

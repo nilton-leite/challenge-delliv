@@ -30,7 +30,7 @@ RUN yarn install
 
 COPY . .
 
-CMD [ "yarn", "build" ]
+CMD [ "yarn", "start" ]
 
 # Final Stage
 # FROM nginx

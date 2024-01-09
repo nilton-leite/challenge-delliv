@@ -32,4 +32,4 @@ RUN yarn build
 
 COPY --from=development /usr/src/app/dist ./dist
 
-CMD ["yarn", "start"]
+CMD ["node", "dist/main"]

@@ -38,7 +38,7 @@ services:
       - 3000:3003
       - 9229:9229
     networks:
-      - nesjs-network
+      - app_network
     depends_on:
       - db
     volumes:

@@ -13,6 +13,7 @@ RUN yarn install
 
 COPY . .
 
+RUN yarn add typescript ts-node @types/node
 RUN yarn run prisma generate
 RUN yarn build
 RUN yarn prisma db seed 

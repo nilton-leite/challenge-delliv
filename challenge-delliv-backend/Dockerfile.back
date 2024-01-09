@@ -7,6 +7,8 @@ WORKDIR /usr/src/app
 
 COPY package*.json /usr/src/app
 
+RUN yarn global add typescript
+
 RUN yarn install --only=production
 
 COPY . .

@@ -62,6 +62,8 @@ services:
     volumes:
       - /app/node_modules
       - ./frontend/web:/app
+    ports:
+        - 3000:3000
 
   # nginx:
   #   restart: always

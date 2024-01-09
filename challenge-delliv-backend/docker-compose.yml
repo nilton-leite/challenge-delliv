@@ -10,24 +10,24 @@ services:
       POSTGRES_DB: delliv-db
     ports:
       - 5432:5432
-  dev:
-    container_name: nestjs_api_dev
-    image: nestjs-api-dev:1.0.0
-    build:
-      context: ./
-      dockerfile: Dockerfile.back
-      #command: npm run start:dev
-    ports:
-      - 3000:3000
-      - 3001:9229
-    networks:
-      - nesjs-network
-    depends_on:
-      - db
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-    restart: unless-stopped
+  # dev:
+  #   container_name: nestjs_api_dev
+  #   image: nestjs-api-dev:1.0.0
+  #   build:
+  #     context: ./
+  #     dockerfile: Dockerfile.back
+  #     #command: npm run start:dev
+  #   ports:
+  #     - 3000:3000
+  #     - 3001:9229
+  #   networks:
+  #     - nesjs-network
+  #   depends_on:
+  #     - db
+  #   volumes:
+  #     - .:/usr/src/app
+  #     - /usr/src/app/node_modules
+  #   restart: unless-stopped
   # backend:
   #   build:
   #     dockerfile: Dockerfile.back

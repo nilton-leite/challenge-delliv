@@ -18,7 +18,7 @@ services:
       context: ./challenge-delliv-backend
       dockerfile: Dockerfile.back
     environment:
-      DATABASE_URL: "postgres://user-delliv:delliv@localhost:5432/delliv-db"
+      DATABASE_URL: "postgres://user-delliv:delliv@db:5432/delliv-db"
       SECRET_JWT: 123456
     ports:
       - 3003:3003

@@ -35,15 +35,14 @@ services:
       dockerfile: Dockerfile.back
       #command: npm run start:prod
     ports:
-      - 3000:3003
-      - 9229:9229
+      - 3003:3003
     networks:
       - app_network
     depends_on:
       - db
     volumes:
       - /usr/src/app/node_modules
-      - ./usr/src/app
+      - .:/usr/src/app
     restart: unless-stopped
 
   # backend:

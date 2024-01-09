@@ -32,4 +32,6 @@ RUN yarn build
 
 COPY --from=development /usr/src/app/dist ./dist
 
-CMD ["node", "dist/main"]
+EXPOSE 3003
+
+CMD ["yarn", "start"]

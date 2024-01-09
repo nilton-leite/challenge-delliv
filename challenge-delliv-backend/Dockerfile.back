@@ -33,17 +33,3 @@ RUN yarn build
 COPY --from=development /usr/src/app/dist ./dist
 
 CMD ["yarn", "start:dev"]
-
-# FROM node:18-alpine
-
-# ENV NODE_ENV=production
-
-# RUN yarn global add typescript
-
-# RUN yarn install
-
-# COPY . .
-
-# EXPOSE 3003 
-
-# CMD [ "yarn", "start:prod" ]

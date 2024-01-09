@@ -10,23 +10,40 @@ services:
         POSTGRES_DB: delliv-db
       ports:
         - 5432:5432
-
-  backend:
+  dev:
+    container_name: nestjs_api_dev
+    image: nestjs-api-dev:1.0.0
     build:
-      dockerfile: Dockerfile.back
       context: ./challenge-delliv-backend
+      dockerfile: Dockerfile.back
+    ports:
+      - 3000:3000
+      - 3001:9229
     networks:
       - app_network
     depends_on:
       - db
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
+
+  # backend:
+  #   build:
+  #     dockerfile: Dockerfile.back
+  #     context: ./challenge-delliv-backend
+  #   networks:
+  #     - app_network
+  #   depends_on:
+  #     - db
 
   frontend:
     build:
       dockerfile: Dockerfile
       context: ./challenge-delliv-front
-    # volumes:
-    #   - /app/node_modules
-    #   - ./frontend/web:/app
+    volumes:
+      - /app/node_modules
+      - ./frontend/web:/app
 
   nginx:
     restart: always
@@ -42,9 +59,9 @@ services:
       - app_network
 
 volumes:
-    build_front:
-    pg:
+  build_front:
+  pg:
 
 networks:
-    app_network:
-        driver: bridge
+  app_network:
+    driver: bridge

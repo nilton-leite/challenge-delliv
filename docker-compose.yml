@@ -17,15 +17,15 @@ services:
     build:
       context: ./challenge-delliv-backend
       dockerfile: Dockerfile.back
+    environment:
+      DATABASE_URL: "postgres://user-delliv:delliv@localhost:5432/delliv-db"
+      SECRET_JWT: 123456
     ports:
       - 3003:3003
     networks:
       - app_network
     depends_on:
       - db
-    environment:
-      - DATABASE_URL="postgres://user-delliv:delliv@localhost:5432/delliv-db"
-      - SECRET_JWT=123456
     restart: unless-stopped
 
   frontend:

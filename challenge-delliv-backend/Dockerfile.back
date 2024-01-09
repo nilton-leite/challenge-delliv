@@ -7,7 +7,7 @@ WORKDIR /usr/src/app
 
 COPY package*.json /usr/src/app
 
-RUN yarn global add typescript
+RUN npm install --global
 
 RUN yarn install --only=production
 

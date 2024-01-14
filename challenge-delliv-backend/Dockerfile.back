@@ -1,7 +1,7 @@
 FROM node:18-alpine as builder
 
 ARG NODE_ENV=production
-ARG DATABASE_URL="postgres://user-delliv:delliv@db:5432/delliv-db"
+ARG DATABASE_URL="postgres://user-delliv:delliv@db:5432/delliv-db?schema=public"
 ARG SECRET_JWT=123456
 
 ENV NODE_ENV=${NODE_ENV}
@@ -21,9 +21,7 @@ COPY . .
 RUN yarn add typescript ts-node @types/node
 RUN yarn run prisma generate
 RUN yarn build
-RUN yarn prisma migrate deploy
-RUN yarn prisma db seed 
 
 EXPOSE 3003
 
-CMD ["yarn", "start"]
+CMD ["yarn", "start:migrate"]

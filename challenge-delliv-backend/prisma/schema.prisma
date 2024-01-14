@@ -7,7 +7,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  url      = "postgres://user-delliv:delliv@host.docker.internal:5432/delliv-db?schema=public"
 }
 
 model User {
